@@ -1,0 +1,34 @@
+int path (int **matrix, int mid, int k, int n)
+{//mid为指定的一个数，找到在二维数组中比mid小的数的个数，并和k比较
+	int i =  n-1;
+	int j = 0;
+	int num = 0;
+	while (i >= 0 && j < n)
+	{
+		if (matrix[i][j] <= mid)//从左下角的数开始比较起，如果不大于mid，则把该列的数的个数加到num中，并且向右移动 
+		{
+			num += i + 1;
+			j++;
+		}
+		else 
+		    i--;
+	}
+	return (num >= k ? 1 : 0);//如果在二维数组中不比mid大的数的个数不比k小，则第k小的元素不会比mid大 
+	 
+}
+
+int kthSmallest(int **matrix, int matrixSize, int *matrixColSize, int k) 
+{
+	int min = matrix[0][0];
+	int max = matrix[matrixSize-1][matrixSize-1];
+	int mid = min + (min + max)/2;
+	while (min < max)
+	{
+		mid = (min + max)/2;
+		if (path(matrix, mid, k ,matrixSize)) 
+		    max = mid;//在中间值的左边寻找
+		else 
+		    min = mid + 1;//在中间值的右边寻找，加1是因为除法向下取整，当min = max - 1时，mid = min,如果min不做改变会陷入死循环 
+	}
+	return min;
+}

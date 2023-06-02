@@ -1,14 +1,16 @@
-package utils;
+/*
+ * @lc app=leetcode.cn id=51 lang=java
+ *
+ * [51] N 皇后
+ */
 
 // @lc code=start
-import java.util.List;
 
+import java.util.List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-// import java.util.HashSet;
-// import java.util.List;
-// import java.util.Set;
+
 
 class Solution {
 
@@ -59,19 +61,5 @@ class Solution {
         }
     }
 }
-
-
-public class Test {
-    public static void main(String[] args) {
-        // Create a new Solution instance
-        Solution solution = new Solution();
-        // Create a test case
-        // int[][] matrix = {{0,0}};
-        int n = 4;
-        // Get the answer
-        List<List<String>> lists = solution.solveNQueens(n);
-        // Print the answer
-        System.out.println(lists);
-    }
-}
+// @lc code=end
 

@@ -30,18 +30,16 @@ class Solution {
             return;
         }
         // base case，超过目标和，直接结束
-        if (sum > target) {
-            return;
-        }
 
         for (int i = start; i < nums.length; i++) {
-            if (i == start || nums[i] != nums[i-1]) {
-                track.add(nums[i]);
-                sum += nums[i];
-                backtrack(nums, target, i);
-                track.removeLast();
-                sum -= nums[i];
+            if (sum + nums[i] > target) {// cut the leaves
+                break;
             }
+            track.add(nums[i]);
+            sum += nums[i];
+            backtrack(nums, target, i);
+            track.removeLast();
+            sum -= nums[i];
         }
     }
 }

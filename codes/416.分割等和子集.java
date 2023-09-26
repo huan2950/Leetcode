@@ -11,6 +11,8 @@ class Solution {
         if (n < 2) return false;
         
         int sum = 0,max = 0;
+        // Sum should be even
+        // max can't larger then 1/2 sum
         for (int i = 0; i < n; i++) {
             sum += nums[i];
             max = Math.max(max,nums[i]);

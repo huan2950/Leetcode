@@ -11,9 +11,9 @@ import java.util.List;
 
 class Solution {
 
-    List<List<Integer>> res = new LinkedList<>();
+    List<List<Integer>> res = new LinkedList<>(); // the set of results
     
-    LinkedList<Integer> track = new LinkedList<>();
+    LinkedList<Integer> track = new LinkedList<>(); // single result
 
     public List<List<Integer>> combine(int n, int k) {
         backtrack(n, 0, k);

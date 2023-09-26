@@ -59,6 +59,20 @@ class Solution{
         if(root.left==null&&root.right==null)return root.val==targetSum;
         return hasPathSum(root.left,targetSum-root.val) || hasPathSum(root.right,targetSum-root.val);
     }
+
+
+    // public boolean hasPathSum(TreeNode root, int targetSum) {
+
+    // }
+
+    // public boolean backtrack(TreeNode root, int sum,int target){
+    //     if (root == null) return false;
+    //     if (root.left == null  && root.right == null && sum == target)return true;
+        
+    //     if (root.left != null){
+
+    //     }
+    // }    
 }
 // @lc code=end
 

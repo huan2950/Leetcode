@@ -20,12 +20,12 @@ class Solution {
             while(i < j){
                 int sum = nums[k] + nums[i] + nums[j];
                 if(sum < 0){
-                    while(i < j && nums[i] == nums[++i]);
+                    while(i < j && nums[i] == nums[++i]);// skip the repeated numbers
                 } else if (sum > 0) {
                     while(i < j && nums[j] == nums[--j]);
-                } else {
+                } else { // find a triplet
                     res.add(new ArrayList<Integer>(Arrays.asList(nums[k], nums[i], nums[j])));
-                    while(i < j && nums[i] == nums[++i]);
+                    while(i < j && nums[i] == nums[++i]); // skip the same number of the answer
                     while(i < j && nums[j] == nums[--j]);
                 }
             }

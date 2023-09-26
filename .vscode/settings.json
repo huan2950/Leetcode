@@ -1,5 +1,6 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
     "commentTranslate.source": "Kaiqun.tencent-cloud-translate-tencentCloud",
-    "commentTranslate.targetLanguage": "en"
+    "commentTranslate.targetLanguage": "en",
+    "commentTranslate.hover.enabled": true
 }

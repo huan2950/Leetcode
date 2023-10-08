@@ -5,37 +5,38 @@ import java.util.Arrays;
 import java.util.List;
 
 class Solution {
-    public int getSubarrayNum (ArrayList<Integer> a, int x) {
-        // write code here
-        int n = a.size();
-        int l = 0, r = 0;
-        int count2 = 0,count5 = 0;
-        int res = 0;
-        while (r < n){
-            while (Math.min(count2, count5) < x && r < n){
-                count2 += compute(a.get(r), 2);
-                count5 += compute(a.get(r), 5);
-                r++;
-            }
+    public int change(int amount, int[] coins) {
+        int n = coins.length;
+        //二维DP数组
+        int[][] dp = new int[n+1][amount+1];
+        for (int i = 0; i <= n; i++) {
+            dp[i][0] = 1;
+        }
 
-            
-            while (Math.min(count2, count5) >= x && l < r){
-                res += n - r + 1;
-                count2 -= compute(a.get(l), 2);
-                count5 -= compute(a.get(l), 5);
-                l++;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j <= amount; j++) {
+                if(j >= coins[i-1]){
+                    dp[i][j] = dp[i-1][j] + dp[i][j-coins[i-1]];
+                }else{
+                    dp[i][j] = dp[i-1][j];
+                }
             }
         }
-        return res % 1000000007;
-    }
+        return dp[n][amount];
 
-    public int compute(int num, int x){
-        int res = 0;
-        while (num % x == 0){
-            res++;
-            num /= x;
-        }
-        return res;
+        //一维DP数组优化
+        // dp[j] = dp[j] dp[j-coin[i-1]]
+        // int[] dp = new int[amount+1];
+        // dp[0] = 1;
+
+        // for (int coin : coins) {
+        //     for (int i = 0; i <= amount; i++) {
+        //         if (i >= coin){
+        //             dp[i] = dp[i] + dp[i - coin];
+        //         }
+        //     }
+        // }
+        // return dp[amount];
     }
 }
 
@@ -46,16 +47,11 @@ public class Test {
         Solution solution = new Solution();
 
         // Create a test case
-        // int[] nums = {5,2,3,50,4}; 
-        ArrayList<Integer> a = new ArrayList<Integer>();
-        a.add(5);
-        a.add(2);
-        a.add(3);
-        a.add(50);
-        a.add(4);
+        int[] nums = {1,2,5}; 
         // String s = "111";
+        int target = 5;
         // Get the answer
-        int res = solution.getSubarrayNum(a, 2);
+        int res = solution.change(target, nums);
         // int res = solution.strStr(haystack, needle);
         // Print the answer
         System.out.println(res);

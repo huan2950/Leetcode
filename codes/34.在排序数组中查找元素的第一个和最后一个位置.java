@@ -3,7 +3,12 @@
  *
  * [34] 在排序数组中查找元素的第一个和最后一个位置
  */
-
+/*
+* @Description: 
+* @Author: timjoy
+* @Date: 2023-10-24
+* @LastEditTime: 2023-10-24
+*/
 // @lc code=start
 class Solution {
     public int[] searchRange(int[] nums, int target) {

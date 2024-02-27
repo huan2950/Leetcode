@@ -40,7 +40,7 @@ class Solution {
             while(curNode.left != null){
                 curNode = curNode.left;
             }
-            root.right = deleteNode(root.right, curNode.val);
+            root.right = deleteNode(root.right, curNode.val);// 删除右子树中的最左节点
             
             curNode.left = root.left;// 将左子树接到右子树的最左节点的左子树上
             curNode.right = root.right;// 将右子树接到右子树的最左节点的右子树上

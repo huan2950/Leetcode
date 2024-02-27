@@ -25,6 +25,7 @@ class Solution {
         for (int i = low; i <= high; i++) {
             int leftNums = countTrees(low, i-1);
             int rightNums = countTrees(i+1, high);
+            // 后序位置
             res += (leftNums * rightNums);
         }
         map.put(high - low + 1, res);

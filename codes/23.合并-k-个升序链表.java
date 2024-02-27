@@ -8,6 +8,8 @@
 
 import java.util.PriorityQueue;
 
+// import utils.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -21,11 +23,13 @@ import java.util.PriorityQueue;
 // import utils.ListNode;
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) return null;
         PriorityQueue<ListNode> queue = new PriorityQueue<>(
             lists.length, (o1,o2) -> (o1.val - o2.val)
         );
         // 初始化queue
         for(ListNode node: lists){
+            if (node != null)
             queue.add(node);
         }
         ListNode dummy = new ListNode(-1);

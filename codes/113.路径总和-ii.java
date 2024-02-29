@@ -44,7 +44,7 @@ class Solution {
             if (targetSum - root.val == 0) {
                 // ! Warning: can't just pass the path to the result,because 
                 // ! path will change later
-                // ! the correct is new a object and pass the new object to the result
+                // ! the correct way is new a object and pass the new object to the result
                 res.add(new ArrayList<>(path));
             }
             return;

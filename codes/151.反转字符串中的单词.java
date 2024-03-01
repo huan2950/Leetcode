@@ -28,9 +28,12 @@ class Solution {
         while (start >= left){
             char c = s.charAt(start); 
             if (c != ' '){
+                // 从右往左找到一个单词的左边界
                 start--;
             }else {
+                // 找到一个单词的左边界并标记
                 int temp = start;
+                // 继续向左消除多余的空格
                 while (start >= left && s.charAt(--start) == ' ');
                 sb.append(s.substring(temp + 1, right + 1) + " ");
                 right = start;

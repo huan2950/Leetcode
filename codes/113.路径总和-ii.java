@@ -61,5 +61,38 @@ class Solution {
         }
     }
 }
+
+/*
+ * 若不要求从根节点到叶子节点，则需要在递归遍历每个节点的时候都以sum为target进行dfs
+ * 并且不是在叶子节点判断sum是否达到了target
+ ! 注意这里的区别
+ */
+class Solution1 {
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param root TreeNode类 
+     * @param sum int整型 
+     * @return int整型
+     */
+    private int res;
+    public int FindPath (TreeNode root, int sum) {
+        // write code here
+        if (root == null) return res;
+        traverse(root, sum);
+        FindPath(root.left, sum);
+        FindPath(root.right, sum);
+        return res;
+    }
+
+    public void traverse(TreeNode root, int sum){
+        if (root == null) return;
+        // 找到了
+        if (sum == root.val) res++;
+        traverse(root.left, sum - root.val);
+        traverse(root.right, sum - root.val);
+    }
+}
 // @lc code=end
 

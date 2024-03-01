@@ -26,9 +26,9 @@ class Solution {
     public TreeNode find(TreeNode root, TreeNode p, TreeNode q){
         if (root == null) return null;
         // 前序位置——判断当前节点是否为p或q
-        if(root.val < p.val){
+        if(root.val < p.val && root.val < q.val){
             return find(root.right, p, q);
-        }else if(root.val > q.val){
+        }else if(root.val > q.val && root.val > p.val){
             return find(root.left, p, q);
         }else return root;
     }

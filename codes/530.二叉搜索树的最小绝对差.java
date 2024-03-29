@@ -24,6 +24,9 @@ import utils.TreeNode;
  * }
  */
 class Solution {
+    /*
+     * 思路：利用二叉搜索树的中序遍历序列递增的思路，比较相邻两个元素的差值
+     */
     TreeNode pre;
     int res = Integer.MAX_VALUE;
 

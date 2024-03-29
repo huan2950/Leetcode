@@ -9,6 +9,10 @@
 import java.util.Stack;
 
 class Solution {
+    /*
+     * 思路：栈
+     * 使用栈存储遍历的字符，当前字符和栈顶相同,则弹出栈顶，否则入栈
+     */
     public String removeDuplicates(String s) {
         Stack<Character> stack = new Stack<>();
 
@@ -22,6 +26,7 @@ class Solution {
         }
         StringBuilder sb = new StringBuilder();
         while (!stack.empty()){
+            // 注意，这里要加在字符串的前面
             sb.insert(0, stack.pop());
         }
         return sb.toString();

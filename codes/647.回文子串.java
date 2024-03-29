@@ -6,9 +6,13 @@
 
 // @lc code=start
 class Solution {
+    /*
+     * dp[i][j]字符串s[i…j]范围内的子串是否为回文子串
+     */
     public int countSubstrings(String s) {
         int n = s.length();
         int res = 0;
+        
         boolean [][] dp = new boolean[n][n];
         for(int i = n - 1; i >= 0; i--){
             for(int j = i; j < n; j++){

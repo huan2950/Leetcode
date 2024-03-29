@@ -6,6 +6,9 @@
 
 // @lc code=start
 class Solution {
+    /*
+     * 思路：模拟法
+     */
     public int[][] generateMatrix(int n) {
         int l = 0, r = n - 1, t = 0, b = n - 1;
         int[][] res = new int[n][n];

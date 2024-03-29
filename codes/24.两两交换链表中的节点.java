@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+
+import utils.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -16,18 +19,21 @@
  * }
  */
 class Solution {
+    /*
+     * 思路：虚拟头结点+模拟
+     * cur = dummy
+     * 
+     */
     public ListNode swapPairs(ListNode head) {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
         
         ListNode cur = dummy;
         while (cur.next != null && cur.next.next != null ){
-            ListNode last = cur.next.next;
-            ListNode start = cur.next;
+            ListNode last = cur.next.next;// 交换的后一个元素
+            ListNode start = cur.next;//交换的前一个元素
             cur.next = last;
-            // cur.next.next = last.next;
             start.next = last.next;
-            // last.next = cur.next;
             last.next = start;
             cur = start;
         }

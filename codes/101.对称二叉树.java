@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+
+import utils.TreeNode;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

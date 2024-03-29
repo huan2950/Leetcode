@@ -6,6 +6,9 @@
 
 // @lc code=start
 class Solution {
+    /*
+     * p[i][j]表示$text_1[0:i]$和$text_2[0:j]$的序列中最长公共子序列的长度
+     */
     // public int longestCommonSubsequence(String text1, String text2) {
     //     int m = text1.length();
     //     int n = text2.length();

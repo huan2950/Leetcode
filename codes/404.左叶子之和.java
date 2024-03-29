@@ -32,6 +32,7 @@ class Solution {
 
     public void traverse(TreeNode root){
         if (root == null) return;
+        // 一个节点左孩子不为空，但是左孩子的左右孩子都为空，那么这个节点的左孩子为左叶子节点
         if (root.left != null ){
             // not leaf node
             if (root.left.left == null && root.left.right == null){

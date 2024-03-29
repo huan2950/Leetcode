@@ -9,7 +9,12 @@
 import java.util.Stack;
 
 class MyQueue {
-
+    /*
+     * 思路：两个栈，一个入栈，一个出栈
+     * 入队：压入入栈中
+     * 出队：要将入栈的栈底元素弹出来，就借助出栈，将入栈中的元素依次压入出栈中，
+     * 此时出栈的栈顶就是原本入栈的栈底，再弹出栈顶即可出队
+     */
     private Stack<Integer> stackIn;
     private Stack<Integer> stackOut;
     private int size;

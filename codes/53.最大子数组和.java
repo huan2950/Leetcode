@@ -8,6 +8,9 @@
 
 class Solution {
     //采用动态规划
+    /*
+     * p[i]表示以nums[i]结尾的最大子数组和
+     */
     public int maxSubArray(int[] nums) {
         int[] dp = new int[nums.length];
         dp[0] = nums[0];
@@ -20,6 +23,8 @@ class Solution {
     }
 }
 // @lc code=end
+
+
 // 不采用动态规划
 // class Solution {
 //     public int maxSubArray(int[] nums) {

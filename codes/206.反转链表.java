@@ -17,15 +17,38 @@
  */
 import utils.ListNode;
 
+// class Solution {
+//     /*
+//      * 思路：递归
+//      */
+//     public ListNode reverseList(ListNode head) {
+//         // 递归返回条件
+//         if (head == null || head.next == null) {
+//             return head;
+//         }
+//         ListNode last = reverseList(head.next);
+//         head.next.next = head;
+//         head.next = null;
+//         return last;
+//     }
+// }
+
 class Solution {
+    /*
+     * 思路：双指针pre和cur,改变cur的next指针指向之前先保存一下原本的cur.next
+     */
     public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+        ListNode prev = null;
+        ListNode cur = head;
+        ListNode temp = null;
+        while (cur != null) {
+            temp = cur.next;// 保存cur下一个节点
+            cur.next = prev;// 改变cur.next指向
+            // 指针后移
+            prev = cur;
+            cur = temp;
         }
-        ListNode last = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
-        return last;
+        return prev;
     }
 }
 // @lc code=end

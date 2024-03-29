@@ -19,6 +19,11 @@ import utils.TreeNode;
  */
 
 class Solution {
+    /*
+     * 思路：二叉搜索树的性质
+     * 遍历过程中第一个数值在[p,q]之间就是最近公共祖先
+     * 
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         return find(root, p, q);
     }

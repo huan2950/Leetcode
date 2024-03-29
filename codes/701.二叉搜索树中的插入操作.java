@@ -24,6 +24,9 @@ import utils.TreeNode;
  * }
  */
 class Solution {
+    /*
+     * 思路: 根据二叉搜索树的性质插入
+     */
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null) return new TreeNode(val);
 

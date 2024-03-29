@@ -10,7 +10,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class MyStack {
-
+    /*
+     * 思路：
+     * 入栈：元素先入队，然后将前面的元素先出队再入队，这样push进去的元素就成了队头，也就是栈顶
+     */
     Queue<Integer> queue1;
     public MyStack() {
         queue1 = new LinkedList<>();

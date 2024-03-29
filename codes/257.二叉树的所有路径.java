@@ -9,7 +9,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import utils.TreeNode;
+// import utils.TreeNode;
 
 /**
  * Definition for a binary tree node.
@@ -48,6 +48,7 @@ class Solution {
         path.append(root.val + "->");
         traverse(root.left, path);
         traverse(root.right, path);
+        // 向上回溯
         path.delete(size, path.length());
 
     }

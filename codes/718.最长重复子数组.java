@@ -6,6 +6,9 @@
 
 // @lc code=start
 class Solution {
+    /*
+     * dp[i][j]表示A的前i个元素组成的子数组和B的前j个元素组成的子数组的最长重复子数组
+     */
     public int findLength(int[] nums1, int[] nums2) {
         int m = nums1.length;
         int n = nums2.length;

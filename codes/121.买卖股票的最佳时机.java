@@ -6,6 +6,9 @@
 
 // @lc code=start
 class Solution {
+    /*
+     * dp[i][0/1]表示第i天（有第0天）不持有/持有股票的最大利润
+     */
     public int maxProfit(int[] prices) {
         int n = prices.length;
         // int[][] dp = new int[n][2];
@@ -16,10 +19,7 @@ class Solution {
         }
         return dp_0;
     }
-}
-// @lc code=end
-
-// class Solution {
+    // class Solution {
 //     public int maxProfit(int[] prices) {
 //         int n = prices.length;
 //         int[][] dp = new int[n][2];
@@ -31,3 +31,6 @@ class Solution {
 //         return dp[n-1][0];
 //     }
 // }
+}
+// @lc code=end
+

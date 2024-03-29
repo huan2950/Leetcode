@@ -6,7 +6,7 @@
 
 // @lc code=start
 
-// import utils.ListNode;
+import utils.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -19,6 +19,9 @@
  * }
  */
 class Solution {
+    /*
+     * 思路：利用虚拟头结点，从虚拟头结点开始遍历
+     */
     public ListNode removeElements(ListNode head, int val) {
         // create a dummy node
         ListNode dummy = new ListNode(-1);

@@ -24,6 +24,10 @@ import utils.TreeNode;
  * }
  */
 class Solution {
+    /*
+     * 后序遍历，先获取左右子树的高度，再判断
+     *  -1 表示已经不是平衡二叉树了，否则返回值是以该节点为根节点树的高度
+     */
     public boolean isBalanced(TreeNode root) {
         return traverse(root) != -1;
     }
